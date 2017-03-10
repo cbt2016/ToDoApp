@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var expect = require('expect');
 var TestUtils = require('react-addons-test-utils');
+var moment = require('moment');
 
 var TodoApp = require('TodoApp');
 
@@ -20,6 +21,8 @@ describe('TodoApp',()=>{
 
     todoApp.handlerAddTodo(text);
     expect(todoApp.state.todos[0].text).toBe(text);
+    //expect createdAt to be a number
+    expect(todoApp.state.todos[0].createdAt).toBeA('number');
   });
 
   it('should toggle completed value when handleToggle is called',()=>{
@@ -34,6 +37,8 @@ describe('TodoApp',()=>{
     expect(todoApp.state.todos[0].completed).toBe(false);
     todoApp.handleToggle(11);
     expect(todoApp.state.todos[0].completed).toBe(true);
+    //expect completedAt to be a number
+    expect(todoApp.state.todos[0].completedAt).toBeA('number');
 
 
   });
