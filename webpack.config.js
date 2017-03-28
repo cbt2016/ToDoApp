@@ -26,7 +26,16 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
-  modules: [path.resolve(__dirname, "app/components/"),path.resolve(__dirname, "app/api/"),path.resolve(__dirname, "app/styles/"), "node_modules"],
+  modules: [
+    path.resolve(__dirname, "app/components/"),
+    path.resolve(__dirname, "app/api/"),
+    path.resolve(__dirname, "app/actions/"),
+    path.resolve(__dirname, "app/reducers/"),
+    "node_modules",
+    path.resolve(__dirname, "app/store/"),
+    path.resolve(__dirname, "app/styles/")
+
+   ],
 
     extensions: ['.js','.jsx']
   },
